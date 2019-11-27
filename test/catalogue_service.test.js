@@ -7,3 +7,18 @@ describe("catalogueService", () => {
     });
   });
 });
+
+  describe("catalogueService.checkBook", () => {
+    test("returns true if the book exists in the list", () => {
+      expect(catalogueService.checkBook("Dracula by Bram Stoker")).toBe(true);
+    });
+    test("returns false if the book does not exist in the list", () => {
+      expect(catalogueService.checkBook("Dracublahhh by Bram Stoker")).toBe(false);
+    });
+  });
+
+  describe("catalogueService.countBooksByFirstLetter", () => {
+    test("returns the number of books beginning with the given letter", () => {
+      expect(catalogueService.countBooksByFirstLetter("W")).toBe(2);
+    });
+  });

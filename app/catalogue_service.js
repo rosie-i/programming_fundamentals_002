@@ -23,15 +23,28 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
+  return catalogue.length
 }
 
 function checkBook(book) {
-  // Your code here
+  return catalogue.includes(book)
 }
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
+  // Loop through the array
+  // For each item, check if catalogue[i].charAt(0) = letter
+  // If true +1 to count
+  // If false, move to next iteration
+  // Return the count
+
+  let count = 0;
+
+  for (let i = 0; i < catalogue.length; i++) {
+    if (catalogue[i].charAt(0) === letter) {
+      count++;
+    }
+  }
+  return count
 }
 
 function countBooksByKeyword(keyword) {
