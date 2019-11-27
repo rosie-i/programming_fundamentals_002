@@ -34,7 +34,8 @@ function countBooksByFirstLetter(letter) {
   // Loop through the array
   // For each item, check if catalogue[i].charAt(0) = letter
   // If true +1 to count
-  // If false, move to next iteration
+  // If false, do nothing
+  // Repeat with each index
   // Return the count
 
   let count = 0;
@@ -48,7 +49,20 @@ function countBooksByFirstLetter(letter) {
 }
 
 function countBooksByKeyword(keyword) {
-  // Your code here
+  // Loop through the array
+  // For each item, check if the keyword is included
+  // If yes, +1 to count
+  // Notes to consider:
+  // What if the keyword is included in the same title twice? e.g. 'Be'
+  // Will capitalisation affect the search? (can use .toLowerCase?)
+  let count = 0;
+
+  for (let i = 0; i < catalogue.length; i++) {
+    if (catalogue[i].includes(keyword)) {
+      count++;
+    }
+  }
+  return count
 }
 
 function getBooksByAuthor(author) {

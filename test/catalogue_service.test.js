@@ -25,3 +25,10 @@ describe("catalogueService", () => {
       expect(catalogueService.countBooksByFirstLetter("X")).toBe(0);
     });
   });
+
+  describe("catalogueService.countBooksByKeyword", () => {
+    test("returns the number of books with a given word in the title", () => {
+      expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+      expect(catalogueService.countBooksByKeyword("normal")).toBe(2);
+    });
+  });
