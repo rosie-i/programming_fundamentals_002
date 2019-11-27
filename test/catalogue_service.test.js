@@ -28,7 +28,7 @@ describe("catalogueService", () => {
 
   describe("catalogueService.countBooksByKeyword", () => {
     test("returns the number of books with a given word in the title", () => {
-      expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+      expect(catalogueService.countBooksByKeyword("ASsassin")).toBe(3);
       expect(catalogueService.countBooksByKeyword("normal")).toBe(2);
     });
   });

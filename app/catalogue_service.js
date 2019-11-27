@@ -56,17 +56,18 @@ function countBooksByKeyword(keyword) {
   // What if the keyword is included in the same title twice? e.g. 'Be'
   // Will capitalisation affect the search? (can use .toLowerCase?)
 
-  // This does work when I run it in repl but the problem is definitely to do with capitalisation
 
   let count = 0;
 
   for (let i = 0; i < catalogue.length; i++) {
-    if (catalogue[i].includes(keyword)) {
-      count++;
+    if (catalogue[i].toLowerCase().includes(keyword.toLowerCase())) {
+      count++; 
     }
   }
   return count
 }
+  // This now works, yay! I had forgotten to put () after .toLowerCase initially. It's a method rather than just a property, so the parentheses signify that.
+
 
 function getBooksByAuthor(author) {
   // Your code here
