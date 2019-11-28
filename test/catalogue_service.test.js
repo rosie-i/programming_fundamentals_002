@@ -28,7 +28,24 @@ describe("catalogueService", () => {
 
   describe("catalogueService.countBooksByKeyword", () => {
     test("returns the number of books with a given word in the title", () => {
-      expect(catalogueService.countBooksByKeyword("ASsassin")).toBe(3);
+      expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
       expect(catalogueService.countBooksByKeyword("normal")).toBe(2);
+      expect(catalogueService.countBooksByKeyword("combine-harvester")).toBe(0);
+    });
+    test("returns the number of books with a given word in the title", () => {
+      expect(catalogueService.countBooksByKeyword("2666")).toBe(1);
     });
   });
+
+  describe("catalogueService.getBooksByAuthor", () => {
+    test("returns a list of books by the given author", () => {
+      expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual([
+        "A Tale of Two Cities by Charles Dickens",
+        "Oliver Twist by Charles Dickens",
+        "Great Expectations by Charles Dickens"
+      ]);
+    });
+    test("returns empty array when no books found", () => {
+      expect(catalogueService.getBooksByAuthor("Rosie Inman")).toEqual([]);
+    });
+});

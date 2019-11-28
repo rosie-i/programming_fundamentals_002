@@ -70,7 +70,17 @@ function countBooksByKeyword(keyword) {
 
 
 function getBooksByAuthor(author) {
-  // Your code here
+  // Loop through the array
+  // For each iteration check whether it includes author (if not includes "by " + author)
+  // If it does, then filter the entire index to a new array
+  // If not then go to next iteration
+  // At the end, return the new array
+
+  let booksByAuthor = catalogue.filter(book => book.includes(author))
+  
+  return booksByAuthor
+  /* Problem with this is it will search by any keyword, not just author.
+  But think that problem is caused by having items as an array rather than objects*/
 }
 
 module.exports = {
